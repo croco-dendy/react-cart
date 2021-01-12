@@ -26,8 +26,8 @@ header
     height: 80px
     width: 100%
     padding: 0 $padding
-    background: #050505
-    color: #efefef
+    background: $primary
+    color: $dark
     display: flex
     justify-content: center
     align-items: center
@@ -35,6 +35,18 @@ header
     .CartButton
         position: absolute
         right: $padding
+        .CartCounter
+            position: absolute
+            display: flex
+            justify-content: center
+            align-items: center
+            font-weight: 700
+            font-style: 20px
+            background: $dark
+            color: $secondary
+            width: 28px
+            height: 28px
+            border-radius: 14px
 
 main
     position: relative

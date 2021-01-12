@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { api } from '~/core/api';
 import { tProducts } from '~/core/models';
+import ProductsList from './ProductsList/ProductList';
 import './Home.sass';
-import ProductsList from '~/pages/Home/components/ProductsList/ProductList';
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<tProducts | null>(null);

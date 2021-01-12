@@ -17,7 +17,7 @@ const products: IProduct[] = [
     title: 'MDMA',
     price: 190,
     info: 'Oooh yeah I am so happy.',
-    available: true,
+    available: false,
   },
   {
     title: 'Mushrooms',

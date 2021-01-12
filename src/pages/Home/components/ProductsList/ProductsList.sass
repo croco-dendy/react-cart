@@ -1,22 +1,55 @@
 @import '~/sass/constants'
 @import '~/sass/colors'
+
+.ProductsList
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 20px
   
 .ProductCard
   position: relative
   display: flex
   flex-direction: column
-  width: 200px
-  height: 200px
+  width: 220px
+  height: 220px
   padding: $padding
   background: darken($dark, 10)
-  h4
-    width: 100%
+  box-sizing: border-box
+  &.not-available
+    opacity: .3
+
+  h3
+    text-transform: uppercase
   .info
-    width: 100%
-  .price
-    width: 60px
+    opacity: .7
+  .controls
+    position: absolute
+    box-sizing: border-box
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: $padding
     font-size: 20px
-    font-weight: 700
-    text-align: center
-    background: $primary
-    margin-top: 40px
+    width: 100%
+    bottom: 0
+    left: 0
+    .price
+      padding: 5px
+      font-weight: 700
+      text-align: center
+      color: $secondary
+      .currency
+        opacity: .7
+        font-weight: 500
+        margin-left: 5px
+    button
+      border: none
+      outline: none
+      text-transform: uppercase
+      font-style: inherit
+      font-weight: 700
+      font-size: 20px
+      background: $primary
+      color: #fff
+      padding: 5px 10px
+      cursor: pointer
