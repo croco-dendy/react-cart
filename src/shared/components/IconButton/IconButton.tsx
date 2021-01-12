@@ -8,7 +8,7 @@ interface IProps {
 const IconButton: React.FC<IProps> = ({ icon }) => {
   return (
     <button className="IconButton">
-      <img src={icon} alt="icon-button" />
+      <img loading="lazy" src={icon} alt="icon-button" />
     </button>
   );
 };

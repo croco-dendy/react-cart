@@ -1,3 +1,4 @@
+import { random } from 'lodash';
 import { meta } from '~/core/meta';
 import { IProduct } from '~/core/models';
 
@@ -6,7 +7,7 @@ function sleep(ms: number) {
 }
 
 const getProducts = async (): Promise<IProduct[]> => {
-  await sleep(2000);
+  await sleep(random(100, 400));
   return meta.products;
 };
 

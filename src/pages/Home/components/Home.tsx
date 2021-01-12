@@ -1,29 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { map } from 'lodash';
 import { api } from '~/core/api';
-import { IProduct, tProducts } from '~/core/models';
+import { tProducts } from '~/core/models';
 import './Home.sass';
+import ProductsList from '~/pages/Home/components/ProductsList/ProductList';
 
 const Home: React.FC = () => {
-  const [data, setData] = useState<tProducts | null>(null);
-  console.log('RENDER');
-  console.log('🚀 > data', data);
+  const [products, setProducts] = useState<tProducts | null>(null);
 
-  const fetchData = async () => {
+  const fetchproducts = async () => {
     const response = await api.products.get();
-    setData(response);
+    setProducts(response);
   };
 
   useEffect(() => {
-    fetchData();
-    return () => console.log('umnounted');
+    fetchproducts();
   }, []);
 
   return (
     <div className="Home">
-      {map(data, (product) => (
-        <div>{product.title}</div>
-      ))}
+      <ProductsList products={products} />
     </div>
   );
 };
