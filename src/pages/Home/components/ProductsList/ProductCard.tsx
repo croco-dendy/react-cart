@@ -12,7 +12,8 @@ const ProductCard: React.FC<IProps> = ({ data }) => {
   const setCartProducts = useSetRecoilState(cartState);
 
   const handleBuy = () => {
-    setCartProducts((prevCartProducts) => [...prevCartProducts, data.title]);
+    if (data.available)
+      setCartProducts((prevCartProducts) => [...prevCartProducts, data.title]);
   };
 
   return (

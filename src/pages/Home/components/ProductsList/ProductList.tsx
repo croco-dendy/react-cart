@@ -12,7 +12,7 @@ const ProductsList: React.FC<IProps> = ({ products }) => {
   return (
     <div className="ProductsList">
       {map(products, (product) => (
-        <ProductCard data={product} />
+        <ProductCard key={product.title} data={product} />
       ))}
     </div>
   );
