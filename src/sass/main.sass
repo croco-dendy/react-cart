@@ -1,13 +1,17 @@
 @import constants
 @import colors
-    
+
+@import "~normalize.css"
+@import "~@blueprintjs/core/lib/css/blueprint.css"
+
 body
     padding: 0
     margin: 0
-    background: #0a0a0a
     color: #efefef
     font-family: 'Montserrat', sans-serif
+    background: linear-gradient(80deg, $primary 0%, darken($blue, 20) 150%)
     height: 100vh
+    overflow: hidden
     #root
         height: 100vh
         width: 100%
@@ -16,22 +20,33 @@ body
     a
         text-decoration: none
         color: inherit
+        &:hover
+            text-decoration: none
+            color: inherit
+
     p
         margin: 0
         padding: 0
-    
+    button
+        &:disabled
+            opacity: .3
+            cursor: not-allowed !important
+
 header
     position: relative
     box-sizing: border-box
-    height: 80px
+    position: fixed
+    z-index: 1
+    height: 60px
     width: 100%
     padding: 0 $padding
-    background: $primary
     color: $dark
     display: flex
     justify-content: center
     align-items: center
     text-transform: uppercase
+    h2
+        color: darken($dark, 10)
     .CartButton
         position: absolute
         right: $padding
@@ -42,7 +57,7 @@ header
             align-items: center
             font-weight: 700
             font-style: 20px
-            background: $dark
+            background: darken($dark, 13)
             color: $secondary
             width: 28px
             height: 28px
@@ -50,10 +65,17 @@ header
 
 main
     position: relative
-    padding: 60px
+    padding: 60px 60px 0 60px
+    background: darken($dark, 15)
+    border-top-left-radius: 30px
+    border-top-right-radius: 30px
+    box-shadow: 0 0 10px 8px transparentize(#000, 0.5)
+    flex-grow: 1
     display: flex
     flex-direction: column
     align-items: center
+    margin-top: 60px
+    overflow: scroll
     .description
         color: #aaa
         margin: 0
@@ -61,5 +83,10 @@ main
 footer
     display: flex
     justify-content: center
-    height: 40px
+    align-items: center
+    background: darken($dark, 15)
+    min-height: 80px
     width: 100%
+    color: darken($primary, 0)
+    font-size: 12px
+    font-family: 'Caveat'

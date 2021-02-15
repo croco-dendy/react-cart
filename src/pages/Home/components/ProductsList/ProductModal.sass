@@ -1,0 +1,62 @@
+@import '~/sass/constants'
+@import '~/sass/colors'
+  
+.ProductModal
+  width: 50vw
+  background: darken($dark, 15)
+  border: 5px solid $primary
+  border-radius: 15px
+  display: flex
+  justify-content: center
+  padding: 15px 30px
+  color: $light
+  &.not-available
+    border: 5px solid $red
+    button
+      background: $red !important
+      opacity: .3 !important
+      cursor: not-allowed !important
+
+  .ProductModalBody
+    display: flex
+    width: 100%
+    flex-direction: column
+    width: 100%
+    h3
+      font-size: 30px
+      margin: 10px 0
+    .info
+      font-family: 'Caveat'
+      font-size: 18px
+      font-weight: 400
+      margin: 10px 0
+    .controls
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      margin: 10px 0
+      width: 100%
+      .price
+        padding: 5px
+        font-weight: 700
+        text-align: center
+        color: $secondary
+        .currency
+          opacity: .7
+          font-weight: 500
+          margin-left: 5px
+      button  
+        border: none
+        outline: none
+        text-transform: uppercase
+        font-style: inherit
+        font-weight: 700
+        font-size: 20px
+        background: $primary
+        color: #fff
+        padding: 5px 10px
+        cursor: pointer
+        &:disabled
+          background: lighten($dark, 10)
+          color: darken($dark, 10)
+          font-size: 15px

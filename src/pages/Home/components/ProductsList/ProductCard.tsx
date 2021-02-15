@@ -1,35 +1,44 @@
 import React from 'react';
 import classnames from 'classnames';
-import { useSetRecoilState } from 'recoil';
 import { IProduct } from '~/core/models';
-import { cartState } from '~/core/recoil/atoms';
+import useCart from '~/shared/hooks/useCart';
 
 interface IProps {
-  data: IProduct;
+  product: IProduct;
+  onOpenProduct: (id: number) => void;
 }
 
-const ProductCard: React.FC<IProps> = ({ data }) => {
-  const setCartProducts = useSetRecoilState(cartState);
+const ProductCard: React.FC<IProps> = ({ product, onOpenProduct }) => {
+  const cart = useCart();
+  const isInCart = cart.includes(product?.id);
 
-  const handleBuy = () => {
-    if (data.available)
-      setCartProducts((prevCartProducts) => [...prevCartProducts, data.title]);
+  const handleBuy = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (product.available) cart.add(product);
+  };
+
+  const handleCardClick = () => {
+    onOpenProduct(product.id);
   };
 
   return (
     <div
+      role="presentation"
+      onClick={handleCardClick}
       className={classnames('ProductCard', {
-        'not-available': !data.available,
+        'not-available': !product.available,
       })}
     >
-      <h3>{data.title}</h3>
-      <p className="info">{data.info}</p>
+      <h3>{product.title}</h3>
+      <p className="info">{product.info}</p>
       <div className="controls">
         <p className="price">
-          {data.price}
+          {product.price}
           <span className="currency">$</span>
         </p>
-        <button onClick={handleBuy}>buy</button>
+        <button disabled={!product.available || isInCart} onClick={handleBuy}>
+          {isInCart ? 'in cart' : 'buy'}
+        </button>
       </div>
     </div>
   );

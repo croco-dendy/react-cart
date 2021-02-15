@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: path.resolve(__dirname, '../src/index.tsx'),
-  mode: 'production',
+  mode: 'development',
   devServer: {
     port: 3030,
     contentBase: path.resolve(__dirname, '../dist'),
@@ -57,6 +57,9 @@ module.exports = {
       filename: 'index.html',
       scriptLoading: 'defer',
       inject: true
+    }),
+    new webpack.DefinePlugin({
+      "process.env": "{}"
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
