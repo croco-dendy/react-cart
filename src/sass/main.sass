@@ -1,8 +1,11 @@
 @import constants
+@import config
 @import colors
 
 @import "~normalize.css"
 @import "~@blueprintjs/core/lib/css/blueprint.css"
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap')
 
 body
     padding: 0
@@ -16,6 +19,7 @@ body
         height: 100vh
         width: 100%
         display: flex
+        align-items: center
         flex-direction: column
     a
         text-decoration: none
@@ -39,6 +43,7 @@ header
     z-index: 1
     height: 60px
     width: 100%
+    max-width: 800px
     padding: 0 $padding
     color: $dark
     display: flex
@@ -64,11 +69,15 @@ header
             border-radius: 14px
 
 main
+    @include desktop
+        padding: 60px 60px 0 60px
     position: relative
-    padding: 60px 60px 0 60px
+    padding: 40px 30px 0 30px
     background: darken($dark, 15)
     border-top-left-radius: 30px
     border-top-right-radius: 30px
+    max-width: 800px
+    width: 100%
     box-shadow: 0 0 10px 8px transparentize(#000, 0.5)
     flex-grow: 1
     display: flex

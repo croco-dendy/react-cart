@@ -1,8 +1,11 @@
 @import '~/sass/constants'
+@import '~/sass/config'
 @import '~/sass/colors'
   
 .ProductModal
-  width: 50vw
+  @include desktop
+    width: 50vw
+  width: 90vw
   background: darken($dark, 15)
   border: 5px solid $primary
   border-radius: 15px

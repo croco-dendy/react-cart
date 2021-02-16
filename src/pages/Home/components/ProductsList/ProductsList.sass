@@ -1,19 +1,26 @@
 @import '~/sass/constants'
 @import '~/sass/colors'
+@import '~/sass/config'
 
 .ProductsList
   display: grid
-  grid-template-columns: repeat(3, 1fr)
+  grid-template-columns: 1fr
+  width: 100%
+  @include tablet
+    grid-template-columns: repeat(3, 1fr)
   gap: 20px
   
 .ProductCard
+  @include desktop
+    width: 180px
+    height: 180px
   position: relative
   display: flex
   flex-direction: column
-  width: 180px
-  height: 180px
+  width: 100%
   padding: $padding
-  box-sizing: content-box
+  box-sizing: border-box
+  border-radius: 20px
   background: darken($dark, 10)
   transition: all .3s ease
   -webkit-backface-visibility: hidden
@@ -30,13 +37,12 @@
     text-transform: uppercase
   .info
     color: darken($light, 60)
+    margin-bottom: 40px
   .controls
-    position: absolute
     box-sizing: border-box
     display: flex
     align-items: center
     justify-content: space-between
-    padding: $padding
     font-size: 20px
     width: 100%
     bottom: 0

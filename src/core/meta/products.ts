@@ -12,7 +12,7 @@ const products: IProduct[] = [
     id: 1,
     title: 'Fuagra',
     price: 140,
-    info: 'О чем ты думал, когда курил дубас в этот раз?',
+    info: 'Sad.',
     available: true,
   },
   {

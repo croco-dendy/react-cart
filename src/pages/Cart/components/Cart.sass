@@ -1,4 +1,5 @@
 @import '~/sass/constants'
+@import '~/sass/config'
 @import '~/sass/colors'
   
 .Cart
@@ -7,6 +8,7 @@
   flex-grow: 1
   width: 100%
   align-items: center
+  justify-self: center
   h3
     margin-bottom: 10px
     font-weight: 500
@@ -15,7 +17,8 @@
   .CartItemsList
     display: flex
     flex-direction: column
-    width: 40%
+    align-items: center
+    width: 100%
     padding: 20px
     .CartItem
       display: flex
@@ -25,6 +28,8 @@
       padding: 10px
       border-radius: 10px
       height: 60px
+      @include tablet
+        width: 40%
       width: 100%
       background: darken($dark, 12)
       p
