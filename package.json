@@ -10,20 +10,19 @@
     "lint": "eslint",
     "lint:fix": "eslint -c .eslintrc.js --fix",
     "lint:styles": "stylelint  \"**/*.scss\"",
-    "type-check": "yarn run tsc --noEmit",
-    "postinstall": "husky install"
+    "type-check": "yarn run tsc --noEmit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@blueprintjs/core": "^3.38.2",
+    "prettier": "^2.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "recoil-persist": "^2.2.0",
     "stylelint": "^13.10.0",
-    "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-sass-guidelines": "^8.0.0",
