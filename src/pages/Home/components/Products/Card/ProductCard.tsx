@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { IProduct } from '~/core/models';
 import useCart from '~/shared/hooks/useCart';
+import './Card.scss';
 
 interface IProps {
   product: IProduct;
@@ -25,7 +26,7 @@ const ProductCard: React.FC<IProps> = ({ product, onOpenProduct }) => {
     <div
       role="presentation"
       onClick={handleCardClick}
-      className={classnames('ProductCard', {
+      className={classnames('product-card', {
         'not-available': !product.available,
       })}
     >

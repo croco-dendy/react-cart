@@ -7,7 +7,7 @@ function sleep(ms: number) {
 }
 
 const getProducts = async (): Promise<IProduct[]> => {
-  await sleep(random(100, 400));
+  await sleep(random(500, 2000));
   return meta.products;
 };
 

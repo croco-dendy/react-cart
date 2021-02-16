@@ -1,0 +1,14 @@
+@import "../sass/config";
+
+.scrollable {
+  @include desktop {
+    padding: 60px 60px 0;
+  }
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  padding: 40px 30px 0;
+  overflow: scroll;
+}

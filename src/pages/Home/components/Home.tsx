@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { api } from '~/core/api';
 import { tProducts } from '~/core/models';
-import ProductsList from './ProductsList/ProductList';
+import Products from './Products';
 import './Home.sass';
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<tProducts | null>(null);
 
-  const fetchproducts = async () => {
+  const fetchProducts = async () => {
     const response = await api.products.get();
     setProducts(response);
   };
 
   useEffect(() => {
-    fetchproducts();
+    fetchProducts();
   }, []);
 
   return (
     <div className="Home">
-      <ProductsList products={products} />
+      <Products data={products} />
     </div>
   );
 };

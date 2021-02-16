@@ -23,7 +23,13 @@
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal", "parent"]
+        "groups": ["builtin", "external", "internal", "parent", "sibling"],
+        "pathGroups": [
+          {
+            "pattern": "~/**",
+            "group": "internal"
+          }
+        ]
       }
     ],
     "import/default": 0

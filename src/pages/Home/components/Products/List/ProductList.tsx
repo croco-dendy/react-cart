@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { find, map } from 'lodash';
 import { IProduct, tProducts } from '~/core/models';
-import ProductCard from './ProductCard';
-import ProductModal from './ProductModal';
+import ProductCard from '../Card';
+import ProductModal from '../Modal';
 import './ProductsList.sass';
 
 interface IProps {
-  products: tProducts | null;
+  data: tProducts | null;
 }
 
-const ProductsList: React.FC<IProps> = ({ products }) => {
+const ProductsList: React.FC<IProps> = ({ data }) => {
   const [productOpened, setProductOpened] = useState<IProduct | null>(null);
 
   const handleOpenProduct = (productId: number) => {
-    if (products)
+    if (data)
       setProductOpened(
-        find(products, (product) => product.id === productId) || null
+        find(data, (product) => product.id === productId) || null
       );
   };
 
@@ -25,7 +25,7 @@ const ProductsList: React.FC<IProps> = ({ products }) => {
 
   return (
     <div className="ProductsList">
-      {map(products, (product) => (
+      {map(data, (product) => (
         <ProductCard
           product={product}
           key={product.title}
