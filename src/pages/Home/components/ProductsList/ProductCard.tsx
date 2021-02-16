@@ -10,10 +10,10 @@ interface IProps {
 
 const ProductCard: React.FC<IProps> = ({ product, onOpenProduct }) => {
   const cart = useCart();
-  const isInCart = cart.includes(product?.id);
+  const disabled = !product.available || cart.includes(product?.id);
 
   const handleBuy = (e: React.MouseEvent) => {
-    e.stopPropagation();
+    if (!disabled) e.stopPropagation();
     if (product.available) cart.add(product);
   };
 
@@ -36,8 +36,8 @@ const ProductCard: React.FC<IProps> = ({ product, onOpenProduct }) => {
           {product.price}
           <span className="currency">$</span>
         </p>
-        <button disabled={!product.available || isInCart} onClick={handleBuy}>
-          {isInCart ? 'in cart' : 'buy'}
+        <button disabled={disabled} onClick={handleBuy}>
+          {cart.includes(product?.id) ? 'in cart' : 'buy'}
         </button>
       </div>
     </div>

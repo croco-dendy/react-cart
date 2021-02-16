@@ -4,12 +4,12 @@
 @mixin tablet {
   @media (min-width: 600px) { @content; }
 }
-@mixin small_desktop {
+@mixin desktop-s {
   @media (min-width: 900px) { @content; }
 }
 @mixin desktop {
   @media (min-width: 1200px) { @content; }
 }
-@mixin for-big-desktop-up {
+@mixin desktop-l {
   @media (min-width: 1800px) { @content; }
 }

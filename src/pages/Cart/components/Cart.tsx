@@ -13,7 +13,6 @@ const Cart: React.FC = () => {
     cart.removeItem(index);
   };
   const handleIncrease = (index: number) => {
-    console.log('increase');
     cart.increase(index);
   };
   const handleDecrease = (index: number) => {

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack s -c webpack/webpack.js",
     "dev": "webpack s -c webpack/webpack.js",
     "build": "webpack -c webpack/webpack.js",
     "storybook": "start-storybook -p 6006",

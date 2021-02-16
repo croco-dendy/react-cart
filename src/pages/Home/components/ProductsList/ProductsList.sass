@@ -7,21 +7,26 @@
   grid-template-columns: 1fr
   width: 100%
   @include tablet
+    width: auto
+    grid-template-columns: repeat(2, 1fr)
+  @include desktop-s
     grid-template-columns: repeat(3, 1fr)
+  @include desktop
+    grid-template-columns: repeat(4, 1fr)
   gap: 20px
   
 .ProductCard
   @include desktop
-    width: 180px
-    height: 180px
+    width: 220px
   position: relative
   display: flex
   flex-direction: column
+  justify-content: space-between
   width: 100%
   padding: $padding
   box-sizing: border-box
   border-radius: 20px
-  background: darken($dark, 10)
+  background: darken($dark, 5)
   transition: all .3s ease
   -webkit-backface-visibility: hidden
   &.not-available
@@ -31,7 +36,7 @@
       box-shadow: none
   &:hover
     transform: translate(-5px, -10px)
-    box-shadow: 10px 10px 0 0 darken($dark, 19)
+    box-shadow: 10px 10px 0 0 darken($dark, 20)
 
   h3
     text-transform: uppercase
@@ -67,6 +72,7 @@
       color: #fff
       padding: 5px 10px
       cursor: pointer
+      white-space: nowrap
       &:disabled
         background: lighten($dark, 10)
         color: darken($dark, 10)
