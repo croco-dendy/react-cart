@@ -6,7 +6,7 @@ const Header: React.FC = () => {
   return (
     <header>
       <Link to="/">
-        <h2>React Boil</h2>
+        <h2>React Cart</h2>
       </Link>
       <CartButton />
     </header>
