@@ -15,6 +15,6 @@ module.exports = {
     '@sass': './src/sass',
   },
   packageOptions: {
-    // knownEntrypoints: ['~normalize.css'],
+    knownEntrypoints: ['~normalize.css'],
   },
 };

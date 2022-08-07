@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { faker } from '@faker-js/faker';
 import { IProduct } from '~/core/models';
 
