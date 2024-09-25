@@ -1,0 +1,41 @@
+@import url('@utils/variables');
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 0;
+  background: $color-container;
+  border-radius: 10px;
+
+  @include desktop {
+    width: 80%;
+  }
+
+  p {
+    margin-left: 20px;
+    font-weight: 600;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+
+  p {
+    margin: 0;
+    font-weight: 900;
+  }
+}
+
+.increase_icon,
+.decrease_icon {
+  width: 25px;
+  margin: 0 15px;
+}
+
+.remove_icon {
+  width: 32px;
+  margin-left: 20px;
+}

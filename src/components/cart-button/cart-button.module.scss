@@ -1,0 +1,19 @@
+@use 'sass:color';
+
+@import url('@utils/variables');
+
+.counter {
+  position: absolute;
+  top: -4px;
+  right: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-style: 20px;
+  font-weight: 700;
+  color: $color-secondary;
+  background: $color-container;
+  border-radius: 14px;
+}

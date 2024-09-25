@@ -1,0 +1,59 @@
+@import url('@utils/variables');
+
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  width: 100%;
+  margin-top: 60px;
+  overflow: hidden;
+  background: $color-container;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 0 10px 1px transparentize(#000, 0.5);
+
+  @include desktop {
+    max-width: 1200px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    display: block;
+    width: 100%;
+    height: 40px;
+    pointer-events: none;
+    content: '';
+    background: linear-gradient(
+      to bottom,
+      $color-container,
+      transparentize(#000, 1)
+    );
+  }
+}
+
+.scrollable {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  width: 100%;
+  padding: 40px 30px 0;
+  overflow: auto;
+
+  @include tablet {
+    padding: 60px 120px;
+  }
+
+  @include desktop {
+    padding: 60px 60px 0;
+  }
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none;
+}

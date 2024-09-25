@@ -1,19 +1,21 @@
-import React from 'react';
-import Footer from './Footer/Footer';
-import Header from './Header/Header';
-import './Layout.scss';
+import {ErrorBoundary} from 'react-error-boundary';
+import {Outlet} from 'react-router-dom';
+import {Header} from './header';
+import {Footer} from './footer';
+import classes from './layout.module.scss';
+import {baseTheme, Container} from '@chakra-ui/react';
 
-const Layout: React.FC = ({ children }) => {
+const Layout = () => {
   return (
-    <>
+    <ErrorBoundary fallbackRender={() => null}>
       <Header />
-      <main>
-        <div className="scrollable">
-          {children}
-          <Footer />
+      <Container p={0} maxW={baseTheme.breakpoints.lg} className={classes.main}>
+        <div className={classes.scrollable}>
+          <Outlet />
         </div>
-      </main>
-    </>
+        <Footer />
+      </Container>
+    </ErrorBoundary>
   );
 };
 

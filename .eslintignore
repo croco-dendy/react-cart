@@ -1,2 +1,9 @@
-dist
-webpack
+node_modules
+build
+public
+*.config.js
+*/reportWebVitals.ts
+*.d.ts
+coverage/
+config/
+dist/

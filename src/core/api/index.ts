@@ -1,5 +1,5 @@
-import ProductsApi from '~/core/api/products';
+import products from './products';
 
 export const api = {
-  products: ProductsApi,
+  products,
 };

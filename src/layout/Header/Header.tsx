@@ -1,15 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import CartButton from '~/layout/Header/CartButton/CartButton';
+import {Link} from 'react-router-dom';
+import {
+  baseTheme,
+  Container,
+  Heading,
+  IconButton,
+  useColorMode,
+} from '@chakra-ui/react';
+import {CartButton} from '@components/cart-button';
+import classes from './Header.module.scss';
+import {SunIcon} from '@chakra-ui/icons';
 
-const Header: React.FC = () => {
+const Header = () => {
+  const {toggleColorMode} = useColorMode();
+
   return (
-    <header>
+    <Container maxW={baseTheme.breakpoints.lg} className={classes.header}>
       <Link to="/">
-        <h2>React Cart</h2>
+        <Heading size="lg" className={classes.title}>
+          React Cart
+        </Heading>
       </Link>
-      <CartButton />
-    </header>
+      <div className={classes.tools}>
+        <IconButton
+          isRound
+          aria-label="Toggle color mode"
+          onClick={toggleColorMode}
+          icon={<SunIcon />}
+        />
+        <CartButton />
+      </div>
+    </Container>
   );
 };
 

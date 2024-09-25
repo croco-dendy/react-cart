@@ -1,0 +1,36 @@
+@use 'sass:color';
+
+@import url('@utils/variables');
+
+.header {
+  @include desktop {
+    max-width: 1200px;
+  }
+
+  position: fixed;
+  z-index: 1;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  height: 60px;
+  padding: 0 20px;
+  color: $color-container;
+  text-transform: uppercase;
+}
+
+.title {
+  font-weight: 900;
+  color: $color-container;
+}
+
+.tools {
+  position: absolute;
+  right: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}

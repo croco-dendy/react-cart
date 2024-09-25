@@ -1,8 +1,16 @@
-import { IProduct } from '~/core/models';
+export interface Product {
+  id: number;
+  title: string;
+  price: number;
+  info: string;
+  available: boolean;
+}
 
-export interface ICartItem {
-  product: IProduct;
+export type Products = Product[];
+
+export interface CartItem {
+  product: Product;
   count: number;
 }
 
-export type tCart = ICartItem[];
+export type Cart = CartItem[];

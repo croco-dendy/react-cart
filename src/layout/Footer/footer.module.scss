@@ -1,0 +1,12 @@
+@import url('@utils/variables');
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 80px;
+  font-family: 'Caveat';
+  font-size: 18px;
+  color: $color-primary;
+}
