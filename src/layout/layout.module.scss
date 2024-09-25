@@ -1,4 +1,5 @@
-@import url('@utils/variables');
+@use 'sass:color';
+@use '@utils/variables' as *;
 
 .main {
   position: relative;
@@ -12,7 +13,7 @@
   background: $color-container;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  box-shadow: 0 0 10px 1px transparentize(#000, 0.5);
+  box-shadow: 0 0 10px 1px color.scale(#000, $alpha: -50%);
 
   @include desktop {
     max-width: 1200px;
@@ -31,7 +32,7 @@
     background: linear-gradient(
       to bottom,
       $color-container,
-      transparentize(#000, 1)
+      color.scale(#000, $alpha: -100%)
     );
   }
 }

@@ -1,6 +1,6 @@
 @use 'sass:color';
 
-@import url('@utils/variables');
+@use '@utils/variables' as *;
 
 .product_card {
   position: relative;

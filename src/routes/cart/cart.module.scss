@@ -1,4 +1,4 @@
-@import url('@utils/variables');
+@use '@utils/variables' as *;
 
 .cart {
   display: flex;

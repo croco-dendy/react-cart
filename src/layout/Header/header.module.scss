@@ -1,12 +1,8 @@
 @use 'sass:color';
 
-@import url('@utils/variables');
+@use '@utils/variables' as *;
 
 .header {
-  @include desktop {
-    max-width: 1200px;
-  }
-
   position: fixed;
   z-index: 1;
   box-sizing: border-box;
@@ -19,6 +15,10 @@
   padding: 0 20px;
   color: $color-container;
   text-transform: uppercase;
+
+  @include desktop {
+    max-width: 1200px;
+  }
 }
 
 .title {

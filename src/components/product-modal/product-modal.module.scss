@@ -1,14 +1,14 @@
-@import url('@utils/variables');
+@use '@utils/variables' as *;
 
 .modal {
-  @include tablet {
-    width: 50vw;
-  }
-
   display: flex;
   justify-content: center;
   width: 90vw;
   border: 5px solid $color-primary;
+
+  @include tablet {
+    width: 50vw;
+  }
 
   &.not_available {
     border: 5px solid $color-error;

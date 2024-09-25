@@ -1,6 +1,6 @@
 @use 'sass:color';
 
-@import url('@utils/variables');
+@use '@utils/variables' as *;
 
 .counter {
   position: absolute;
